@@ -1,6 +1,6 @@
 # Data-Analysis-Farmers
 This is an anlysis on da1t1a colleted on 4800 farmers 
-In [1]:
+
 
 ## Installation
 Use the package manager pip to install numpy,pandas,matplotlib and seaborn
@@ -10,25 +10,25 @@ pip install numpy
 pip install matplotlib.py1p1lo1t
 pip install seaborn
 ``` 
-##Usage
+## Usage
 ```python 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 %matplotlib inline
-```
-In [2]:
-##Import data and convert to csv file
+```python
 
-farmer_data = pd.read_excel('Farmer Profile.xlsx')
+### Import data and convert to csv file
+111111111111111
+```farmer_data = pd.read_excel('Farmer Profile.xlsx')```python
 C:\Users\EMMANUELLA\AppData\Roaming\Python\Python37\site-packages\ipykernel_launcher.py:1: FutureWarning: Inferring datetime64[ns] from data containing strings is deprecated and will be removed in a future version. To retain the old behavior explicitly pass Series(data, dtype={value.dtype})
   """Entry point for launching an IPython kernel.
 
-farmer_data.to_csv('Farmer Profile.csv')
+``farmer_data.to_csv('Farmer Profile.csv')```python
 In [4]:
-## Read first 10 rows of data
-farmer_data.head()
+### Read first 10 rows of data
+```farmer_data.head()
 Out[4]:
 Unnamed: 0	_id	device_response_id	completion_rate	contact_id	contact_language_id	device_id	duration	end_location	end_timestamp	...	user_contact_id	user_id	validated_by	validated_on	Do you have a Mobile Money account?	q24477o	q24477oc	Do you herewith confirm that the information given in this report is correct and complete	q24478o	q24478oc
 0	9858.0	60d990f8a74a6f4549af0f37	a7e12664d4c44ab8-1603877929402	81.08	NaN	NaN	1158.0	02:05:50	{'type': 'Point', 'coordinates': [0.0, 0.0]}	2020-10-28 11:44:39	...	0.0	746.0	Mary Serwaa Numafo	2020-11-04 11:31:12	NaN	NaN	NaN	NaN	NaN	NaN
@@ -36,10 +36,10 @@ Unnamed: 0	_id	device_response_id	completion_rate	contact_id	contact_language_id
 2	19974.0	60d992dca74a6f4549af5e4f	1602690782.4212-421-11	13.51	NaN	NaN	1.0	00:00:00	{'type': 'Point', 'coordinates': [-1.38882, 5....	2020-10-14 15:53:02	...	0.0	346.0	NaN	NaT	NaN	NaN	NaN	NaN	NaN	NaN
 3	39495.0	60e30a85a74a6f4549b19c42	c50eb0582bd7181e-1599470200528	86.49	NaN	NaN	705.0	00:05:50	{'type': 'Point', 'coordinates': [0.0, 0.0]}	2020-09-07 09:22:30	...	0.0	466.0	NaN	NaT	NaN	NaN	NaN	NaN	NaN	NaN
 4	44825.0	60e30bb3a74a6f4549b1c5ed	50027e9898a0f83a-1597685872897	21.62	63078.0	121.0	817.0	00:00:00	{'type': 'Point', 'coordinates': [0.0, 0.0]}	2020-08-17 17:37:52	...	0.0	520.0	NaN	NaT	NaN	NaN	NaN	NaN	NaN	NaN
-5 rows × 140 columns
+5 rows × 140 columns```python
 
-## Checking for null values
-farmer_data.isnull().sum().head()
+#### Checking for null values
+```farmer_data.isnull().sum().head()
 Out[5]:
 Unnamed: 0               0
 _id                      0
@@ -49,24 +49,24 @@ contact_id            1442
 dtype: int64
 In [6]:
 sns.heatmap(farmer_data.isnull(), yticklabels = False ,cbar = True , cmap = 'viridis')
-Out[6]:![image](11)
+Out[6]:![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/Null_values.png)```python
 <AxesSubplot:>
 
 In [7]:
-#Cleaning data
-# Columns like sales_point_name had 75% of it cells null
-farmer_data.drop(['sale_point_name','sale_point_id','device_response_id','q24478oc','q24477oc','end_location','end_timestamp','duration','flags','farmer_verification','publish_date','Location','Please record your evidence of consent. Eg. "I, Akosua Mansa agree that my information can be taken"','flag_summary','internal_response_id','flagged_responses','Do you herewith confirm that the information given in this report is correct and complete'], axis = 1, inplace = True)
+###  Cleaning data
+## Columns like sales_point_name had 75% of it cells null
+```farmer_data.drop(['sale_point_name','sale_point_id','device_response_id','q24478oc','q24477oc','end_location','end_timestamp','duration','flags','farmer_verification','publish_date','Location','Please record your evidence of consent. Eg. "I, Akosua Mansa agree that my information can be taken"','flag_summary','internal_response_id','flagged_responses','Do you herewith confirm that the information given in this report is correct and complete'], axis = 1, inplace = True)```python
 In [8]:
-#Cleaning more data
-farmer_data.drop(['q10288oc','q10289oc','q10290oc','Phone Number','q10292oc','Farmer Image','q10306oc','q10308oc','q10319o','q10310oc','q10294oc','q10305oc','q10311oc','q10394p','q11827pid','q18427','q18427o','q18427oc','q24478o','q24477o','Do you have a Mobile Money account?','validated_on','Name of bank','user_contact_id','updated_at','survey_id','submitted_on','start_timestamp','start_location','score','q22148t','remarks','q18430oc','q18430o','q18428','Do you have a bank account?','q18429oc','q18429o','Do you have children?','q18428pid','q10301oc','q18428p','q10284oc','q10319oc','Provide the phone number of a relative if you do not own a phone.','q12024oc','Please provide phone number linked to your Mobile Money account.','q10322oc','q10321oc','q10319o','q10318oc','q10314oc','Date of birth','National ID image (ID card image  or Upload Image)'] ,axis = 1, inplace = True)
+## Cleaning more data
+```farmer_data.drop(['q10288oc','q10289oc','q10290oc','Phone Number','q10292oc','Farmer Image','q10306oc','q10308oc','q10319o','q10310oc','q10294oc','q10305oc','q10311oc','q10394p','q11827pid','q18427','q18427o','q18427oc','q24478o','q24477o','Do you have a Mobile Money account?','validated_on','Name of bank','user_contact_id','updated_at','survey_id','submitted_on','start_timestamp','start_location','score','q22148t','remarks','q18430oc','q18430o','q18428','Do you have a bank account?','q18429oc','q18429o','Do you have children?','q18428pid','q10301oc','q18428p','q10284oc','q10319oc','Provide the phone number of a relative if you do not own a phone.','q12024oc','Please provide phone number linked to your Mobile Money account.','q10322oc','q10321oc','q10319o','q10318oc','q10314oc','Date of birth','National ID image (ID card image  or Upload Image)'] ,axis = 1, inplace =True)```python
 In [9]:
-#drop first column
-farmer_data.drop( columns = farmer_data.columns[0] , axis =1 ,inplace = True)
+### Drop first column
+```farmer_data.drop( columns = farmer_data.columns[0] , axis =1 ,inplace = True)```python
 In [10]:
-sns.set_style('whitegrid')
+```sns.set_style('whitegrid')``python
 In [11]:
-# filling numerical null values with mean values of columns
-mean_age = farmer_data['Age'].mean()
+### filling numerical null values with mean values of columns
+```mean_age = farmer_data['Age'].mean()
 farmer_data['Age'].fillna(value = mean_age , inplace = True)
 In [12]:
 mean_annual_primary_crop = farmer_data['What is your annual primary crop  yield estimate (bags)?'].mean().round()
@@ -91,12 +91,13 @@ farmer_data['Household size'].isnull().sum()
 Out[18]:
 0
 In [19]:
-# Fill null categorical variables with mode (highest) values of respective columns
+### Fill null categorical variables with mode (highest) values of respective columns
 farmer_data.fillna(farmer_data.mode().iloc[0], inplace = True)
+``` python
 In [20]:
-# Group  categorical variables by respective codes
+### Group  categorical variables by respective codes
 
-farmer_data['consent'] = farmer_data.groupby(['I consent to my personal data being recorded and processed for purposes to aid farmer insight and decision making','q10284o']).ngroup()
+```farmer_data['consent'] = farmer_data.groupby(['I consent to my personal data being recorded and processed for purposes to aid farmer insight and decision making','q10284o']).ngroup()
 
 farmer_data['Gender1'] = farmer_data.groupby(['Gender','q10288o']).ngroup()
 
@@ -132,18 +133,18 @@ farmer_data['Mobile network  primarily registered for Mobile Money '] = farmer_d
 
 farmer_data[' Belong to Farmer group'] = farmer_data.groupby(['Do you belong to a farmer group?','q12024o']).ngroup()
 
-farmer_data['Name of Farmer group'] = farmer_data.groupby(['Name of Farmer Group/ Association/ Agribusiness','q11827p']).ngroup()
+farmer_data['Name of Farmer group'] = farmer_data.groupby(['Name of Farmer Group/ Association/ Agribusiness','q11827p']).ngroup()```python
 In [21]:
-farmer_data['Marital Status'].head()
+``farmer_data['Marital Status'].head()
 Out[21]:
 0    Single/Never married
 1                 Widowed
 2                 Married
 3                 Married
 4                 Married
-Name: Marital Status, dtype: object
+Name: Marital Status, dtype: object```python
 In [22]:
-farmer_data.isnull().sum().head(40)
+```farmer_data.isnull().sum().head(40)
 Out[22]:
 _id                                                                                                                  0
 completion_rate                                                                                                      0
@@ -186,9 +187,10 @@ q10311cs                                                                        
 q10311o                                                                                                              0
 Years of farming experience?                                                                                         0
 dtype: int64
-In [23]:
-# No null values!
-sns.heatmap(farmer_data.isnull(),cbar = True, yticklabels = False, cmap = 'viridis')
+In [23]:```python
+####  No null values!
+```sns.heatmap(farmer_data.isnull(),cbar = True, yticklabels = False, cmap = 'viridis')```python
+![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/No_null_values.png)
 Out[23]:
 <AxesSubplot:>
 
