@@ -63,7 +63,8 @@ dtype: int64
 
 sns.heatmap(farmer_data.isnull(), yticklabels = False ,cbar = True , cmap = 'viridis')
 ```
-Out[6]:![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/Null_values.png)
+![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/Null_values.png)
+
 <AxesSubplot:>
 
   
@@ -73,7 +74,7 @@ Out[6]:![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/Null
 farmer_data.drop(['sale_point_name','sale_point_id','device_response_id','q24478oc','q24477oc','end_location','end_timestamp','duration','flags','farmer_verification','publish_date','Location','Please record your evidence of consent. Eg. "I, Akosua Mansa agree that my information can be taken"','flag_summary','internal_response_id','flagged_responses','Do you herewith confirm that the information given in this report is correct and complete'], axis = 1, inplace = True)
 ```
 
-#### Cleaning more data
+#### More data cleaning
 ```python
 farmer_data.drop(['q10288oc','q10289oc','q10290oc','Phone Number','q10292oc','Farmer Image','q10306oc','q10308oc','q10319o','q10310oc','q10294oc','q10305oc','q10311oc','q10394p','q11827pid','q18427','q18427o','q18427oc','q24478o','q24477o','Do you have a Mobile Money account?','validated_on','Name of bank','user_contact_id','updated_at','survey_id','submitted_on','start_timestamp','start_location','score','q22148t','remarks','q18430oc','q18430o','q18428','Do you have a bank account?','q18429oc','q18429o','Do you have children?','q18428pid','q10301oc','q18428p','q10284oc','q10319oc','Provide the phone number of a relative if you do not own a phone.','q12024oc','Please provide phone number linked to your Mobile Money account.','q10322oc','q10321oc','q10319o','q10318oc','q10314oc','Date of birth','National ID image (ID card image  or Upload Image)'] ,axis = 1, inplace =True)
 ```
@@ -226,9 +227,10 @@ dtype: int64
 
 ####  No null values!
 ```python
-sns.heatmap(farmer_data.isnull(),cbar = True, yticklabels = False, cmap = 'viridis')```python
-![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/No_null_values.png)
+sns.heatmap(farmer_data.isnull(),cbar = True, yticklabels = False, cmap = 'viridis')
 ```
+![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/No_null_values.png)
+
 <AxesSubplot:>
 
 ##  GRAPHS
@@ -237,10 +239,11 @@ sns.heatmap(farmer_data.isnull(),cbar = True, yticklabels = False, cmap = 'virid
 #Checking the level of compltion  of questionnaires by respondents(Farmers) 
 ```python
 sns.histplot( x = 'completion_rate' , data = farmer_data )
+```
 
-<AxesSubplot:xlabel='completion_rate', ylabel='Count'>
 ![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/completion_rate.png)
 
+<AxesSubplot:xlabel='completion_rate', ylabel='Count'>
 ```
 
 #Inseaborn, the hue parameter determines which column in the data frame should be used for colour encoding
@@ -250,6 +253,7 @@ sns.histplot( x = 'completion_rate' , data = farmer_data )
 sns.countplot(x = 'is_validated' , data = farmer_data ,palette='YlOrBr')
 ```
 ![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/is_validated.png)
+
 <AxesSubplot:xlabel='is_validated', ylabel='count'>
 
 ```python
@@ -257,6 +261,7 @@ sns.countplot(x = 'is_validated' , data = farmer_data ,palette='YlOrBr')
 sns.countplot( x= 'I consent to my personal data being recorded and processed for purposes to aid farmer insight and decision making', data = farmer_data , palette='deep')
 ```
 ![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/consent.png)
+
 <AxesSubplot:xlabel='I consent to my personal data being recorded and processed for purposes to aid farmer insight and decision making', ylabel='count'>
 
 ```python
@@ -264,6 +269,7 @@ sns.countplot( x= 'I consent to my personal data being recorded and processed fo
 sns.countplot(x = 'is_flagged' , data = farmer_data,palette='icefire' )
 ```
 ![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/flagged.png)
+
 <AxesSubplot:xlabel='is_flagged', ylabel='count'>
 
 ```python 
@@ -273,6 +279,7 @@ sns.countplot(x = 'is_flagged' , data = farmer_data,palette='icefire' )
 sns.countplot(x = 'Gender' , data = farmer_data)
 ```
 ![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/gender.png)
+
 <AxesSubplot:xlabel='Gender', ylabel='count'>
 
 
@@ -280,6 +287,7 @@ sns.countplot(x = 'Gender' , data = farmer_data)
 sns.histplot(x = 'Age', kde = True ,data = farmer_data )
 ```
 ![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/Age_kde.png)
+
 <AxesSubplot:xlabel='Age', ylabel='Count'>
 
 
@@ -287,6 +295,7 @@ sns.histplot(x = 'Age', kde = True ,data = farmer_data )
 sns.histplot(x = 'Age', hue = 'Gender' , kde = True ,data = farmer_data )
 ```
 ![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/Age_Gender.png)
+
 <AxesSubplot:xlabel='Age', ylabel='Count'>
 
 
@@ -295,8 +304,9 @@ sns.histplot(x = 'Age', hue = 'Gender' , kde = True ,data = farmer_data )
 sns.countplot(x ='Marital Status'  , data = farmer_data, palette = 'icefire').legend(bbox_to_anchor= (1.2,1))
 ```
 ![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/marital_status.png)
+
 No handles with labels found to put in legend.
-Out[31]:
+
 <matplotlib.legend.Legend at 0x1337f410>
 
 ```python
@@ -315,6 +325,7 @@ sns.histplot( farmer_data, x= 'Indicate Number of children' ,hue = 'Gender'  ,bi
 ```
 ![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/children_given_gender.png)
 Out[33]:
+
 <AxesSubplot:xlabel='Indicate Number of children', ylabel='Count'>
 
 
@@ -502,6 +513,7 @@ In [54]:
 sns.histplot(x='Years of farming experience?'  ,kde = True, data =farmer_data)
 ```
 ![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/farmownership_years_of_experience.png)
+
 <AxesSubplot:xlabel='Years of farming experience?', ylabel='Count'>
 
 
@@ -616,6 +628,7 @@ sns.countplot(x='Are your secondary crops mixed with the primary crop in one far
 sns.lineplot( x = 'What is the farm size of your primary crop in acres?', y='What is the farm size of your secondary crop in acres?', data = farmer_data)
 ```
 ![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/farm_size_pri_sec.png)
+
 <AxesSubplot:xlabel='What is the farm size of your primary crop in acres?', ylabel='What is the farm size of your secondary crop in acres?'>
 
 In [65]:
@@ -623,6 +636,7 @@ In [65]:
 sns.countplot(x='Do you belong to a farmer group?' , data =farmer_data)
 ```
 ![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/Belong_to farmer_group.png)
+
 <AxesSubplot:xlabel='Do you belong to a farmer group?', ylabel='count'>
 
 
@@ -630,6 +644,7 @@ sns.countplot(x='Do you belong to a farmer group?' , data =farmer_data)
 sns.countplot( x='Is it a feature phone (yam phone) or a smartphone?',hue = 'Gender',data = farmer_data).legend(bbox_to_anchor= (1.2,1))
 ```
 ![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/feature_yam.png)
+
 <matplotlib.legend.Legend at 0x1cbeaa90>
 
 
@@ -637,6 +652,7 @@ sns.countplot( x='Is it a feature phone (yam phone) or a smartphone?',hue = 'Gen
 sns.countplot(x='Do you own a mobile phone?' ,hue = 'Which mobile network have you primarily registered for Mobile Money?', data =farmer_data).legend(bbox_to_anchor= (1.2,1))
 ```
 ![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/mobile_phone_mtn.png)
+
 <matplotlib.legend.Legend at 0x1bc8daf0>
 
 
@@ -644,4 +660,5 @@ sns.countplot(x='Do you own a mobile phone?' ,hue = 'Which mobile network have y
 sns.countplot(x='Which mobile network have you primarily registered for Mobile Money?' , data =farmer_data)
 ```
 ![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/which_mobile_network.png)
+
 <AxesSubplot:xlabel='Which mobile network have you primarily registered for Mobile Money?', ylabel='count'>
