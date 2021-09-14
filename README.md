@@ -357,7 +357,7 @@ plt.figure( figsize = (15,8))
 sns.countplot(x= "Farmer's Language"  ,data = farmer_data , palette='rocket')
 plt.legend()
 ```
-![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/farmer's language.png)
+![image](https://github.com/ellakumi/Data-Analysis-Farmers/blob/main/farmer's%20language.png)
 
 
 
